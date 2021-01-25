@@ -9,9 +9,10 @@ fetch('https://freegeoip.app/json/',{
 })
 .then(function(responseData){
 	let geolocation_div = document.getElementById('geolocation');
-	let ip_address, location;
-	spanArray = [ip_address,location];
-	responseArray = ["Country: " + responseData.country_name, "IP: " + responseData.ip];
+	let ip_address, location, region;
+	spanArray = [ip_address,location, region];
+	responseArray = ["Country: " + responseData.country_name, "Region: " +
+													responseData.region_name, "IP: " + responseData.ip];
 	for(i = 0; i < spanArray.length; i++){
 		spanArray[i] = document.createElement('span');
 		spanArray[i].textContent = responseArray[i];

@@ -132,12 +132,22 @@
 	align-items: center;
 }
 .geolocation span{
+	display: flex;
+	color:#6bb6d5;
+	justify-content: center;
+	align-items: center;
 	margin: 5px;
+	text-align: center;
 	text-transform: uppercase;
 	font-family: "Poppins";
 }
-.geolocation span::first-line{
-	color:#6bb6d5;
+
+.geolocation span:nth-child(3)::before{
+	content:'       ';
+	height: 30px;
+	width:80px;
+	position: absolute;
+	background: #18191a !important;
 }
 /*GEOLOCATION*/
 @media only screen and (max-width: 1080px){
