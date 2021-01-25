@@ -1,0 +1,148 @@
+/*LOADING*/
+@keyframes loading{
+	0%{
+		opacity: 1;
+	}
+	90%{
+		opacity: 0.9;
+	}
+	100%{
+		opacity: 0;
+	}
+
+}
+.loading{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation-fill-mode: forwards;
+	background: #191f26;
+	width:100%;
+	height: 100%;
+	opacity: 1;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: 99999999999;
+}
+/*LOADING*/
+
+
+
+/*BANNER*/
+@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.top-banner-wrapper{
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+}
+.top-banner{
+	border-radius: 10px;
+	background: #242526;
+	width:100%;
+	max-width:1450px;
+	max-height: 400px;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+}
+.top-banner img{
+	padding: 5px;
+	animation:fading 9s infinite;
+	width:100%;
+	max-width:1450px;
+	max-height: 400px;
+	object-fit: cover;
+	border-radius: 15px;
+}
+
+/*HEADER*/
+.header{
+	transition: 0.6s;
+	display: flex;
+	width:100vw;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.header-title p{
+	padding-bottom: 10px;
+	margin-top:3rem;
+	font-size: 35px;
+	color:white;
+	font-family: "Raleway";
+	font-weight: bold;
+	border-bottom: 1px solid #fc077b;
+	transition: 0.7s;
+}
+.header-title p:hover{
+	color:#fc077b;
+	transition: 0.7s;
+	border-bottom:1px solid #fc077b;
+}
+
+.header-filters{
+	width:80vw;
+	margin-top:1rem;
+	display: flex;
+	justify-content: flex-start;
+}
+.header-filters label{
+	color:#ececec;
+	font-family: 'Poppins';
+	font-size: 20px;
+	margin-right: 1rem;
+}
+.header-filters input{
+	width: 60px;
+	background: #6a6c6f;
+	border-radius: 12px;
+	height: 2rem;
+	margin-left: 1rem;
+	border:none;
+	color:#fc077b;
+	text-align: center;
+	outline: none !important;
+}
+.header-filters input:hover{
+	transition: 0.8s;
+	background: #fce8ea;
+}
+.header-filters button{
+	border:none;
+	outline: none !important;
+	background: none;
+	border-radius: 10px;
+	font-size: 20px;
+	font-family: "Poppins";
+	color: white;
+}
+.header-filters button:hover{
+	color:#ec4176;
+	transition: 0.4s;
+}
+
+/*GEOLOCATION*/
+.geolocation{
+	display: flex;
+	flex-direction: row;
+	color:white;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+}
+.geolocation span{
+	margin: 5px;
+	text-transform: uppercase;
+	font-family: "Poppins";
+}
+.geolocation span::first-line{
+	color:#6bb6d5;
+}
+/*GEOLOCATION*/
+@media only screen and (max-width: 1080px){
+	.header-filters{
+		display: flex;
+		justify-content: center;
+	}
+}

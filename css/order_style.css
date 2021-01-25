@@ -1,0 +1,158 @@
+p, span, h1, h2, h3, label{
+	z-index: 1;
+}
+.header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header p{
+	padding-bottom: 10px;
+	margin-top:3rem;
+	font-size: 35px;
+	color:white;
+	font-family: "Raleway";
+	font-weight: bold;
+	border-bottom: 1px solid #fc077b;
+	transition: 0.7s;
+}
+.header p:hover{
+	color:#fc077b;
+	transition: 0.7s;
+	border-bottom:1px solid #fc077b;
+}
+.order_middle_panel{
+	z-index: 1;
+	transition: 0.5s;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.order_middle_panel h2{
+	color:white;
+	transition: 0.3s;
+	font-family: "Poppins";
+	font-size: 20px;
+	line-height: 3;
+}
+.order_middle_panel h2:hover{
+	transition: 0.5s;
+	color:#fed700;
+}
+.order_middle_panel h3{
+	color:white;
+	transition: 0.3s;
+	font-family: "Poppins";
+	font-size: 20px;
+}
+
+
+
+.order_form_wrapper{
+	z-index: 1;
+	margin-top: 2rem;
+	display: flex;
+	border-radius: 15px;
+	justify-content: center;
+	transition: 0.5s;
+
+}
+.order_place_form{
+	z-index: 1;
+	background: #1e1e1f;
+	display: flex;
+	width:650px;
+	height: 500px;
+	border-radius: 15px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+}
+.order_place_form:hover{
+	background: #0b3030;
+}
+.order_place_form label{
+	margin-top:10px;
+	margin-bottom: 10px;
+	color:white;
+	font-family: "Poppins";
+	font-size: 23px;
+	border-bottom: 1px solid none;
+	transition: 0.5s;
+}
+.order_place_form label:hover{
+	border-bottom:1px solid #ff4560;
+	transition: 0.5s;
+
+}
+.order_place_form input{
+	color:white;
+	padding-left: 10px;
+	font-family: inherit;
+	outline: none !important;
+	border:none;
+	border-radius: 15px;
+	background: #303031;
+	width:270px;
+	transition: 0.2s;
+	height: 40px;
+}
+.order_place_form input:focus{
+	background:#ff4560;
+	transition:0.5s; 
+}
+.order_form_wrapper button{
+	margin-top:1rem;
+	width:100px;
+	height: 6vh;
+	font-size: 19px;
+	border-radius: 30px;
+	border:none;
+	background: #242526;
+	color:white;
+	font-family: "Raleway";
+	outline: none !important;
+}
+.order_form_wrapper button:hover{
+	background: #ff4560;
+	transition: 0.5s;
+	color: #fed700;
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width:1000px){
+	.order_place_form{
+		width:400px;
+		height: 300px;
+	}
+	.order_place_form input{
+		width:50%;
+		height: 35px;
+	}
+	.order_form_wrapper button{
+		margin-top:10px;
+		width:100px;
+		height: 40px;
+		font-size: 15px;
+		margin-bottom: 5px;
+	}
+}
+@media only screen and (max-width:650px){
+	body{
+		text-align: center;
+	}
+	.order_place_form{
+		margin-bottom: 5rem;
+		width:320px;
+		height: 300px;
+	}
+	.order_middle_panel h3{
+		font-size: 15px;
+	}
+	.order_place_form label{
+		font-size: 20px;
+	}
+}
