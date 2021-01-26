@@ -21,6 +21,7 @@ fetch('https://picsum.photos/v2/list?page=2&limit=100',{
       card_left = document.createElement('div');
       card_left.classList.add('card-left');
       card_img = document.createElement('img');
+      card_img.alt = 'image';
       card_img.src = element.download_url;
       card_buttons = document.createElement('div');
       card_buttons.classList.add('card-buttons');

@@ -142,13 +142,13 @@
 	font-family: "Poppins";
 }
 
-.geolocation span:nth-child(3)::before{
+/*.geolocation span:nth-child(3)::before{
 	content:'       ';
 	height: 30px;
 	width:80px;
 	position: absolute;
 	background: #18191a !important;
-}
+}*/
 /*GEOLOCATION*/
 @media only screen and (max-width: 1080px){
 	.header-filters{
