@@ -12,15 +12,15 @@
   }
   snowflakesF();
 
-  let i = 0;
+  let snow = 0;
   snowBTN = document.getElementById('snowButton');
   snowBTN.addEventListener('click', function click () {
-    if (i == 0){
+    if (snow == 0){
       snowflakes.innerHTML = ' ';
-      i=1;
+      snow=1;
     }else{
       snowflakesF();
-      i=0;
+      snow=0;
     }
     console.log(i);
   });

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warframe RTD</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class = 'main-container'>
+		<div class = 'input-container'>
+			<input type="" name="" id = 'compatibility' autocomplete="off">
+			<label>
+				Rerolled<input type="checkbox" name="rerolled" id = 'rerolled'>
+				<span></span>
+			</label>
+			<button id = 'btn_find'>Find</button>
+
+			<div class = 'item-info' id = 'item-info'>
+				<!-- Weapon Info Goes Here -->
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	inputClick = document.getElementById('compatibility').addEventListener('keyup',function(event)
+	{
+		if(event.keyCode === 13){
+			event.preventDefault();
+			document.getElementById('btn_find').click();
+		}
+	});
+	document.getElementById('btn_find').addEventListener('click', function(event){
+		event.preventDefault();
+		fetch("http://n9e5v4d8.ssl.hwcdn.net/repos/weeklyRivensPC.json", {
+			METHOD: 'GET'
+		})
+		.then(function(response){
+			if(response.status !== 200){
+				throw response.status;
+			}
+			return response.json();
+		})
+		.then(function(responseData){
+			let info = document.getElementById('item-info');
+			info.innerHTML = '';
+			let input = document.getElementById('compatibility').value.toUpperCase();
+			let rerolled = document.getElementById('rerolled');
+			let weap_type, weap_name,weap_avg,weap_min,weap_max,weap_median,weap_rerolled;
+			spanList = [weap_type,weap_name,weap_avg,weap_min,weap_max,weap_median,weap_rerolled];
+			stringList = ["Weapon Type: ", "Weapon Name: ", " Average Price: "
+			, "Min. Price: ", "Max. Price: ","Median: ", "Rerolled: "]
+			for(i = 0 ; i < spanList.length; i++){
+				spanList[i] = document.createElement('span');
+				info.appendChild(spanList[i]);
+			}
+			if(rerolled.checked == true){
+				responseData.filter(responseData => responseData.compatibility !== null && responseData.compatibility.includes(input) && responseData.rerolled == true).forEach(element => {
+					infoList = [element.itemType,element.compatibility, element.avg, element.min, element.max,element.median, element.rerolled];
+					for(i = 0; i < spanList.length; i++){
+						spanList[i].textContent = stringList[i] + infoList[i];
+					}
+				})
+			}else{
+				responseData.filter(responseData => responseData.compatibility !== null && responseData.compatibility.includes(input) && responseData.rerolled == false).forEach(element => {
+					infoList = [element.itemType,element.compatibility, element.avg, element.min, element.max,element.median, element.rerolled];
+					for(i = 0; i < spanList.length; i++){
+						spanList[i].textContent = stringList[i] + infoList[i];
+					}
+				})
+			}
+		})
+		.catch(function(error){
+			console.log(error);
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,60 @@
+.main-container{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #3a3b3c;
+	border:2px solid #fed700;
+	border-radius: 5px;
+}
+.input-container{
+	border:2px solid #fed700;
+	border-radius: 5px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+input:nth-child(1){
+	outline: none;
+	border-radius: 20px;
+	padding: 5px;
+	text-align: center;
+	border:none;
+	font-family: "BPG Nino Mtavruli";
+	font-size: 20px;
+	height: 40px;
+	width:auto;
+}
+input:nth-child(2){
+	outline: none;
+	width:200px;
+}
+button{
+	border:none;
+	transition: 0.5s;
+	border-radius: 15px;
+	background: #fed700;
+	font-family: "BPG Web 001";
+	font-size: 18px;
+	padding: 5px 20px;
+}
+button:hover{
+	background: #fc077b;
+}
+label{
+	display: flex;
+	color:white;
+	align-items: center;
+	font-family: "BPG Web 001";
+}
+.item-info{
+
+	margin-top:20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "BPG Web 001 Caps";
+	color:white;
+}
